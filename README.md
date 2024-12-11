@@ -1,86 +1,92 @@
-# Sprint 3 IT Academy | Video management tool
+# S3. Testing
 
-## Introduction
+This project focuses on implementing functions for processing and analyzing movie data while ensuring correctness through unit tests. The primary goal is to write modular, testable code that handles various requirements for working with an array of movie objects.
 
-A company in the audiovisual sector has asked us for a web application that will allow their employees to quickly find movies from a large database they have, since the process is currently done manually.
+---
 
-You will be in charge of setting up the core of the application: all the logic of filtering and sorting of movies. You have 2 weeks to finish, which is how long this sprint lasts.
+## Objectives
 
-<br>
+- Understand and practice methods: `map`, `reduce`, and `filter`.
+- Create unit tests.
+- Learn to effectively manipulate a dataset.
 
-## Requirements
+---
 
+## Features and Tasks
 
-1. Clone this repo
-```bash
-$ git clone https://github.com/IT-Academy-BCN/starter-code-frontend-sprint-3-movies
-```
+### Level 1: Basic Functionalities
 
-2. Unlink your repo from the itacademy repository
-```bash
-$ git remote rm origin
-```
+1. **Retrieve All Directors**
+   - **Function**: `getAllDirectors()`
+   - **Description**: Extracts and returns an array of all directors from the given movie data.
 
-3. Link your repo to the repository you have to create in your github account
-```bash
-$ git remote add origin <your repo name!>
-```
+2. **Retrieve Movies by Director**
+   - **Function**: `getMoviesFromDirector()`
+   - **Description**: Takes a director's name as input and returns an array of movies directed by them.
 
-<br>
+3. **Calculate Average Movie Ratings**
+   - **Function**: `moviesAverageOfDirector()`
+   - **Description**: Accepts an array of movies and computes the average score of those movies, rounded to two decimal places.
 
-## Submission
+4. **Sort Movies Alphabetically**
+   - **Function**: `orderAlphabetically()`
+   - **Description**: Receives an array of movies and returns the first 20 titles sorted alphabetically.
 
-1. Upon completion, run the following commands:
+5. **Sort Movies by Year**
+   - **Function**: `orderByYear()`
+   - **Description**: Orders movies by release year. In case of ties (same year), movies are further sorted alphabetically by title.
 
-```bash
-$ git add .
-$ git commit -m "Sprint Solution"
-$ git push origin master
-```
+6. **Average Rating by Genre**
+   - **Function**: `averageByGenre()`
+   - **Description**: Calculates the average rating of movies within a specified genre.
 
-2. Create Pull Request.
+---
 
-3. Upload the link to the virtual campus so that your mentor can correct it and give you feedback.
+### Level 2: Advanced Data Manipulation
 
+7. **Convert Movie Durations**
+   - **Function**: `convertHoursToMinutes()`
+   - **Description**: Converts movie durations from hours and minutes format to a total duration in minutes. Returns a new array of movies with updated durations.
 
+---
 
-<br>
+### Level 3: Complex Functionalities
 
-## Introduction
+8. **Find the Best Movie of a Year**
+   - **Function**: `bestFilmOfYear()`
+   - **Description**: Determines the highest-rated movie for a specified year and returns the movie in an array.
 
-The statement of the exercise is available on the virtual campus.
+---
 
-<br>
+## Testing Framework and Tools
 
-## Tests!
+- **Unit Testing**: Automated unit tests are implemented in the file `tests/films.spec.js` using a JavaScript testing framework (e.g., Jest).
+- **Visual Test Feedback**: Executing the command `npm run test:watch` generates an HTML file (`test-results.html`) displaying the test results. Use the **Live Server plugin** in Visual Studio Code for real-time updates when the code changes.
 
+---
 
-```shell
-$ npm install
-$ npm run test:watch
-```
+## Development Instructions
 
-And last, open the generated `test-results.html` file with the "Live Server" VSCode extension to see test results.
+### Setup
 
-Apart from the statement, you will know exactly what you are asked to do by looking at the file `tests/films.spec.js`, all tests are already defined here!
+1. **Clone the Repository**  
+   ```
+   git clone https://github.com/oscarrep/S3.-Testing
+   cd S3.-Testing
+   ```
 
-<br>
+2. **Install Jest**  
+   ```
+   npm install jest -D
+   ```
 
-## Instructions
+3. **Run Tests**  
+   ```
+   npm run test
+   ```
 
-You have the following indications from the frontend responsible:
-
-- It is mandatory to implement all loops in ES6 (using map, reduce, filter and sort to manipulate arrays).
-
-- As at the moment we don't consume data from a server using an API, we will work with data from the src/data.js archive. For the moment we will implement the logic using
-an array of information about 250 movies.
-
-- The implementation is about processing this array of movies, to display it as requested in each exercise.
-
-- The logic to implement will be placed in the src/films.js file.
-
-- You don't need to show the result of each function on the screen. Your goal is to pass the tests.  More information on how to program oriented to pass tests at the end of the document.
-
-- Don't forget to include the capture of the test results in the virtual campus.
-
-
+4. **Watch Tests**  
+   ```
+   npm run test:watch
+   ```
+   
