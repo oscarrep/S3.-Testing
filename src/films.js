@@ -17,7 +17,7 @@ function moviesAverageOfDirector(array, director) {
   let movies = array.filter(name => name.director === director);
   let scores = movies.map(movie => movie.score);
   let totalScore = scores.reduce((sum, n) => sum + n, 0);
-  let average = (totalScore / movies.length).toFixed(2);
+  let average = Number((totalScore / movies.length).toFixed(2));
   console.log("EXERCICE 3 ->", average);
   return average;
 }
@@ -29,6 +29,7 @@ function orderAlphabetically(array) {
     let titleB = b.title;
     return (titleA < titleB) ? -1 : (titleA > titleB) ? 1 : 0;
   })
+  sorted = sorted.map(movie => movie.title);
   let sortedSliced = sorted.slice(0, 20);
   console.log("EXERCICE 4 ->", sortedSliced);
   return sortedSliced;
@@ -36,7 +37,7 @@ function orderAlphabetically(array) {
 
 // Exercise 5: Order by year, ascending
 function orderByYear(array) {
-  let sorted = array.sort(function (a, b) {
+  let sorted = [...array].sort(function (a, b) {
     let yearA = a.year;
     let yearB = b.year;
     let titleA = a.title;
@@ -44,14 +45,19 @@ function orderByYear(array) {
 
     if (yearA != yearB) return (yearA < yearB) ? -1 : 1;
     else if (yearA == yearB) return (titleA < titleB) ? -1 : (titleA > titleB) ? 1 : 0;
-  })
+  });
   console.log("EXERCICE 5 ->", sorted);
   return sorted;
 }
 
 // Exercise 6: Calculate the average of the movies in a category
-function moviesAverageByCategory() {
-
+function moviesAverageByCategory(array, gen) {
+  let genreArr = array.filter(movie => movie.genre.includes(gen));
+  let scores = genreArr.map(movie => movie.score);
+  let totalScore = scores.reduce((sum, n) => sum + n, 0);
+  let averageGen = Number((totalScore / genreArr.length).toFixed(2));
+  console.log("EXERCICE 6 ->", averageGen);
+  return averageGen;
 }
 
 // Exercise 7: Modify the duration of movies to minutes

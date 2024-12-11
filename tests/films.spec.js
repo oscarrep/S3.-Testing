@@ -293,8 +293,41 @@ describe('Function "orderByYear"', () => {
 // Exercise 6
 // YOUR CODE HERE. Test moviesAverageByCategory()
 describe('Function "moviesAverageByCategory"', () => {
-  it('ADD YOUR CODE IN films.spec.js file', () => {
-    expect(typeof hoursToMinutes).toBe('coffee');
+  it(' should return the average score of movies selecting only the director films. With 2 decimals! ', () => {
+    expect(moviesAverageByCategory([
+      {
+        title: 'Amadeus',
+        year: 1984,
+        director: 'Milos Forman',
+        duration: '2h 40min',
+        genre: ['Biography', 'Drama', 'History', 'Music'],
+        score: 8.3
+      },
+      {
+        title: 'The Pianist',
+        year: 2002,
+        director: 'Roman Polanski',
+        duration: '2h 30min',
+        genre: ['Biography', 'Drama', 'Music', 'War'],
+        score: 8.5
+      },
+      {
+        title: 'Whiplash',
+        year: 2014,
+        director: 'Damien Chazelle',
+        duration: '1h 47min',
+        genre: ['Drama', 'Music'],
+        score: 8.5
+      },
+      {
+        title: 'La La Land',
+        year: 2016,
+        director: 'Damien Chazelle',
+        duration: '2h 8min',
+        genre: ['Comedy', 'Drama', 'Music', 'Musical', 'Romance'],
+        score: 8.2
+      }
+    ], 'Music')).toBe(8.38);
   });
 });
 
